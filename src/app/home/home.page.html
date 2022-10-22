@@ -195,6 +195,8 @@
                   min="2022"
                   max="2023"
                   formControlName="send_date"
+                  cancel-text="Cancelar"
+                  doneText="Aceptar"
                 ></ion-datetime>
               </ion-item>
 
@@ -204,12 +206,6 @@
                 <div *ngIf="errorControl.send_date.errors.invalidDate">
                   <ion-text color="danger" class="messages-alert"
                     >{{ errorControl.send_date.errors.messageError }}</ion-text
-                  >
-                </div>
-
-                <div *ngIf="errorControl.send_date.errors?.required">
-                  <ion-text color="danger" class="messages-alert"
-                    >El campo es requerido.</ion-text
                   >
                 </div>
               </div>
