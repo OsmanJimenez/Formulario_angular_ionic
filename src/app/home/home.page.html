@@ -67,7 +67,7 @@
               </div>
               <div *ngIf="errorControl.last_name.errors?.maxLength">
                 <ion-text color="primary" class="messages-alert"
-                >Maximo 20 caracteres.</ion-text
+                  >Maximo 20 caracteres.</ion-text
                 >
               </div>
             </div>
@@ -102,7 +102,7 @@
               </div>
               <div *ngIf="errorControl.identification.errors?.maxLength">
                 <ion-text color="primary" class="messages-alert"
-                >Maximo 20 caracteres.</ion-text
+                  >Maximo 20 caracteres.</ion-text
                 >
               </div>
             </div>
@@ -137,12 +137,12 @@
               </div>
               <div *ngIf="errorControl.email.errors?.maxLength">
                 <ion-text color="primary" class="messages-alert"
-                >Maximo 20 caracteres.</ion-text
+                  >Maximo 20 caracteres.</ion-text
                 >
               </div>
               <div *ngIf="errorControl.email.errors?.email">
                 <ion-text color="primary" class="messages-alert"
-                >Ingrege un correo valido.</ion-text
+                  >Ingrege un correo valido.</ion-text
                 >
               </div>
             </div>
@@ -208,7 +208,7 @@
           >
             <div *ngIf="errorControl.send_date.errors.invalidDate">
               <ion-text color="primary" class="messages-alert"
-                >La fecha no puede ser un Sabado ni un Domingo.</ion-text
+                >{{ errorControl.send_date.errors.messageError }}</ion-text
               >
             </div>
           </div>

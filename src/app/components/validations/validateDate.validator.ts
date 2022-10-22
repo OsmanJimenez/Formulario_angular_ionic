@@ -8,8 +8,16 @@ export function validateDate(controlName: string) {
       let weekDay = format(new Date(control.value), "EEEE");
 
       console.log(weekDay);
-      if (weekDay == "Saturday" || weekDay == "Sunday") {
-        control.setErrors({ invalidDate: true });
+      if (weekDay == "Saturday") {
+        control.setErrors({
+          invalidDate: true,
+          messageError: "La fecha no puede ser un Sabado.",
+        });
+      } else if (weekDay == "Sunday") {
+        control.setErrors({
+          invalidDate: true,
+          messageError: "La fecha no puede ser un Domingo.",
+        });
       } else {
         control.setErrors(null);
       }
