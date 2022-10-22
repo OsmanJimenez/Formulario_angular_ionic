@@ -44,7 +44,7 @@ export class HomePage {
             Validators.email,
           ],
         ],
-        send_date: ["", Validators.compose([Validators.required])],
+        send_date: ["", [Validators.required]],
         identification: [
           "",
           [

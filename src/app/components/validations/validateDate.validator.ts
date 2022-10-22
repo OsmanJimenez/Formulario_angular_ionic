@@ -22,7 +22,10 @@ export function validateDate(controlName: string) {
         control.setErrors(null);
       }
     } else {
-      control.setErrors(null);
+      control.setErrors({
+        invalidDate: true,
+        messageError: "La fecha es requerida.",
+      });
     }
   };
 }

@@ -3,235 +3,232 @@
     <form [formGroup]="createForm">
       <ion-grid class="form-data">
         <ion-row>
-          <!-- Input Nombre -->
-          <ion-col size="12">
-            <ion-item>
-              <ion-label position="floating" color="tertiary"
-                >Nombres *</ion-label
+          <ion-card>
+            <!-- Input Nombre -->
+            <ion-col size="12">
+              <ion-item>
+                <ion-label position="floating" color="primary"
+                  >Nombres</ion-label
+                >
+                <ion-input
+                  type="text"
+                  formControlName="first_name"
+                  id="first_name"
+                ></ion-input>
+              </ion-item>
+
+              <div
+                *ngIf="errorControl.first_name.errors != null && (errorControl.first_name.touched || errorControl.first_name.dirty)"
               >
-              <ion-input
-                mode="md"
-                type="text"
-                [attr.maxlength]="150"
-                formControlName="first_name"
-                id="first_name"
-              ></ion-input>
-            </ion-item>
+                <div *ngIf="errorControl.first_name.errors?.required">
+                  <ion-text color="danger" class="messages-alert"
+                    >El campo es requerido.</ion-text
+                  >
+                </div>
+                <div *ngIf="errorControl.first_name.errors?.minlength">
+                  <ion-text color="danger" class="messages-alert"
+                    >Minimo 4 caracteres.</ion-text
+                  >
+                </div>
+                <div *ngIf="errorControl.first_name.errors?.maxLength">
+                  <ion-text color="danger" class="messages-alert"
+                    >Maximo 20 caracteres.</ion-text
+                  >
+                </div>
+              </div>
+            </ion-col>
 
-            <div
-              *ngIf="errorControl.first_name.errors != null && (errorControl.first_name.touched || errorControl.first_name.dirty)"
-            >
-              <div *ngIf="errorControl.first_name.errors?.required">
-                <ion-text color="primary" class="messages-alert"
-                  >El campo es requerido.</ion-text
+            <!-- Input Apellido -->
+            <ion-col size="12">
+              <ion-item>
+                <ion-label position="floating" color="primary"
+                  >Apellidos</ion-label
                 >
-              </div>
-              <div *ngIf="errorControl.first_name.errors?.minlength">
-                <ion-text color="primary" class="messages-alert"
-                  >Minimo 4 caracteres.</ion-text
-                >
-              </div>
-              <div *ngIf="errorControl.first_name.errors?.maxLength">
-                <ion-text color="primary" class="messages-alert"
-                  >Maximo 20 caracteres.</ion-text
-                >
-              </div>
-            </div>
-          </ion-col>
+                <ion-input
+                  formControlName="last_name"
+                  id="last_name"
+                ></ion-input>
+              </ion-item>
 
-          <!-- Input Apellido -->
-          <ion-col size="12">
-            <ion-item>
-              <ion-label position="floating" color="tertiary"
-                >Apellidos *</ion-label
+              <div
+                *ngIf="errorControl.last_name.errors != null && (errorControl.last_name.touched || errorControl.last_name.dirty)"
               >
-              <ion-input
-                mode="md"
-                formControlName="last_name"
-                id="last_name"
-              ></ion-input>
-            </ion-item>
+                <div *ngIf="errorControl.last_name.errors?.required">
+                  <ion-text color="danger" class="messages-alert"
+                    >El campo es requerido.</ion-text
+                  >
+                </div>
+                <div *ngIf="errorControl.last_name.errors?.minlength">
+                  <ion-text color="danger" class="messages-alert"
+                    >Minimo 4 caracteres.</ion-text
+                  >
+                </div>
+                <div *ngIf="errorControl.last_name.errors?.maxLength">
+                  <ion-text color="danger" class="messages-alert"
+                    >Maximo 20 caracteres.</ion-text
+                  >
+                </div>
+              </div>
+            </ion-col>
 
-            <div
-              *ngIf="errorControl.last_name.errors != null && (errorControl.last_name.touched || errorControl.last_name.dirty)"
-            >
-              <div *ngIf="errorControl.last_name.errors?.required">
-                <ion-text color="primary" class="messages-alert"
-                  >El campo es requerido.</ion-text
+            <!-- Input Identificación -->
+            <ion-col size="12">
+              <ion-item>
+                <ion-label position="floating" color="primary"
+                  >Identificación</ion-label
                 >
-              </div>
-              <div *ngIf="errorControl.last_name.errors?.minlength">
-                <ion-text color="primary" class="messages-alert"
-                  >Minimo 4 caracteres.</ion-text
-                >
-              </div>
-              <div *ngIf="errorControl.last_name.errors?.maxLength">
-                <ion-text color="primary" class="messages-alert"
-                  >Maximo 20 caracteres.</ion-text
-                >
-              </div>
-            </div>
-          </ion-col>
+                <ion-input
+                  type="number"
+                  formControlName="identification"
+                  id="identification"
+                ></ion-input>
+              </ion-item>
 
-          <!-- Input Identificación -->
-          <ion-col size="12">
-            <ion-item>
-              <ion-label position="floating" color="tertiary"
-                >Identificación</ion-label
+              <div
+                *ngIf="errorControl.identification.errors != null && (errorControl.identification.touched || errorControl.identification.dirty)"
               >
-              <ion-input
-                mode="md"
-                type="number"
-                formControlName="identification"
-                id="identification"
-              ></ion-input>
-            </ion-item>
+                <div *ngIf="errorControl.identification.errors?.required">
+                  <ion-text color="danger" class="messages-alert"
+                    >El campo es requerido.</ion-text
+                  >
+                </div>
+                <div *ngIf="errorControl.identification.errors?.minlength">
+                  <ion-text color="danger" class="messages-alert"
+                    >Minimo 4 caracteres.</ion-text
+                  >
+                </div>
+                <div *ngIf="errorControl.identification.errors?.maxLength">
+                  <ion-text color="danger" class="messages-alert"
+                    >Maximo 20 caracteres.</ion-text
+                  >
+                </div>
+              </div>
+            </ion-col>
 
-            <div
-              *ngIf="errorControl.identification.errors != null && (errorControl.identification.touched || errorControl.identification.dirty)"
-            >
-              <div *ngIf="errorControl.identification.errors?.required">
-                <ion-text color="primary" class="messages-alert"
-                  >El campo es requerido.</ion-text
+            <!-- Input Identificación -->
+            <ion-col size="12">
+              <ion-item>
+                <ion-label position="floating" color="primary"
+                  >Correo Electronico</ion-label
                 >
-              </div>
-              <div *ngIf="errorControl.identification.errors?.minlength">
-                <ion-text color="primary" class="messages-alert"
-                  >Minimo 4 caracteres.</ion-text
-                >
-              </div>
-              <div *ngIf="errorControl.identification.errors?.maxLength">
-                <ion-text color="primary" class="messages-alert"
-                  >Maximo 20 caracteres.</ion-text
-                >
-              </div>
-            </div>
-          </ion-col>
+                <ion-input
+                  type="email"
+                  formControlName="email"
+                  id="email"
+                ></ion-input>
+              </ion-item>
 
-          <!-- Input Identificación -->
-          <ion-col size="12">
-            <ion-item>
-              <ion-label position="floating" color="tertiary"
-                >Correo Electronico</ion-label
+              <div
+                *ngIf="errorControl.email.errors != null && (errorControl.email.touched || errorControl.email.dirty)"
               >
-              <ion-input
-                mode="md"
-                type="email"
-                formControlName="email"
-                id="email"
-              ></ion-input>
-            </ion-item>
-
-            <div
-              *ngIf="errorControl.email.errors != null && (errorControl.email.touched || errorControl.email.dirty)"
-            >
-              <div *ngIf="errorControl.email.errors?.required">
-                <ion-text color="primary" class="messages-alert"
-                  >El campo es requerido.</ion-text
-                >
+                <div *ngIf="errorControl.email.errors?.required">
+                  <ion-text color="danger" class="messages-alert"
+                    >El campo es requerido.</ion-text
+                  >
+                </div>
+                <div *ngIf="errorControl.email.errors?.minlength">
+                  <ion-text color="danger" class="messages-alert"
+                    >Minimo 4 caracteres.</ion-text
+                  >
+                </div>
+                <div *ngIf="errorControl.email.errors?.maxLength">
+                  <ion-text color="danger" class="messages-alert"
+                    >Maximo 20 caracteres.</ion-text
+                  >
+                </div>
+                <div *ngIf="errorControl.email.errors?.email">
+                  <ion-text color="danger" class="messages-alert"
+                    >Ingrege un correo valido.</ion-text
+                  >
+                </div>
               </div>
-              <div *ngIf="errorControl.email.errors?.minlength">
-                <ion-text color="primary" class="messages-alert"
-                  >Minimo 4 caracteres.</ion-text
-                >
-              </div>
-              <div *ngIf="errorControl.email.errors?.maxLength">
-                <ion-text color="primary" class="messages-alert"
-                  >Maximo 20 caracteres.</ion-text
-                >
-              </div>
-              <div *ngIf="errorControl.email.errors?.email">
-                <ion-text color="primary" class="messages-alert"
-                  >Ingrege un correo valido.</ion-text
-                >
-              </div>
-            </div>
-          </ion-col>
+            </ion-col>
 
-          <!-- Input Genero de Nacimiento-->
-          <ion-col size="12">
-            <ion-item lines="none">
-              <ion-list lines="none" class="gender-list">
-                <ion-label color="tertiary">Género de Nacimiento *</ion-label>
-                <ion-radio-group
-                  color="tertiary"
-                  formControlName="gender"
-                  id="gender"
-                >
-                  <ion-row>
-                    <ion-col size="6">
-                      <ion-item>
-                        <ion-label>Femenino</ion-label>
-                        <ion-radio mode="md" slot="start" value="F"></ion-radio>
-                      </ion-item>
-                    </ion-col>
+            <!-- Input Genero-->
+            <ion-col size="12">
+              <ion-item lines="none">
+                <ion-list lines="none" class="gender-list">
+                  <ion-label color="primary">Género</ion-label>
+                  <ion-radio-group
+                    color="primary"
+                    formControlName="gender"
+                    id="gender"
+                  >
+                    <ion-row>
+                      <ion-col size="6">
+                        <ion-item>
+                          <ion-label>Masculino</ion-label>
+                          <ion-radio slot="start" value="M"></ion-radio>
+                        </ion-item>
+                      </ion-col>
 
-                    <ion-col size="6">
-                      <ion-item class="ml-16">
-                        <ion-label>Masculino</ion-label>
-                        <ion-radio mode="md" slot="start" value="M"></ion-radio>
-                      </ion-item>
-                    </ion-col>
-                  </ion-row>
-                </ion-radio-group>
-              </ion-list>
-            </ion-item>
+                      <ion-col size="6">
+                        <ion-item>
+                          <ion-label>Femenino</ion-label>
+                          <ion-radio slot="start" value="F"></ion-radio>
+                        </ion-item>
+                      </ion-col>
+                    </ion-row>
+                  </ion-radio-group>
+                </ion-list>
+              </ion-item>
 
-            <div
-              *ngIf="errorControl.gender.errors != null && (errorControl.gender.touched || errorControl.gender.dirty)"
-            >
-              <div *ngIf="errorControl.gender.errors?.required">
-                <ion-text color="primary" class="messages-alert"
-                  >El campo es requerido.</ion-text
-                >
-              </div>
-            </div>
-          </ion-col>
-
-          <!-- Input Fecha de Nacimiento -->
-          <ion-col size="12">
-            <ion-item>
-              <ion-label position="floating" color="tertiary"
-                >Fecha de Envio</ion-label
+              <div
+                *ngIf="errorControl.gender.errors != null && (errorControl.gender.touched || errorControl.gender.dirty)"
               >
-              <ion-datetime
-                displayFormat="D MMM YYYY"
-                min="2022"
-                max="2023"
-                value="2022-10-06T11:06Z"
-                formControlName="send_date"
-              ></ion-datetime>
-            </ion-item>
-          </ion-col>
-          <div
-            *ngIf="errorControl.send_date.errors != null && (errorControl.send_date.touched || errorControl.send_date.dirty)"
-          >
-            <div *ngIf="errorControl.send_date.errors.invalidDate">
-              <ion-text color="primary" class="messages-alert"
-                >{{ errorControl.send_date.errors.messageError }}</ion-text
-              >
-            </div>
-          </div>
-        </ion-row>
-      </ion-grid>
+                <div *ngIf="errorControl.gender.errors?.required">
+                  <ion-text color="danger" class="messages-alert"
+                    >El campo es requerido.</ion-text
+                  >
+                </div>
+              </div>
+            </ion-col>
 
-      <!-- Botones -->
-      <ion-grid>
-        <ion-row>
-          <ion-col class="ion-text-center" size="12">
-            <ion-button
-              color="primary"
-              (click)="sendData()"
-              id="btn-create-modal"
-              class="btn-primary-2"
-              [disabled]="createForm.invalid"
-              >Registrar</ion-button
-            >
-          </ion-col>
+            <!-- Input Fecha de Envio -->
+            <ion-col size="12">
+              <ion-item>
+                <ion-label position="floating" color="primary"
+                  >Fecha de Envio</ion-label
+                >
+                <ion-datetime
+                  displayFormat="D MMM YYYY"
+                  min="2022"
+                  max="2023"
+                  formControlName="send_date"
+                ></ion-datetime>
+              </ion-item>
+
+              <div
+                *ngIf="errorControl.send_date.errors != null && (errorControl.send_date.touched || errorControl.send_date.dirty)"
+              >
+                <div *ngIf="errorControl.send_date.errors.invalidDate">
+                  <ion-text color="danger" class="messages-alert"
+                    >{{ errorControl.send_date.errors.messageError }}</ion-text
+                  >
+                </div>
+
+                <div *ngIf="errorControl.send_date.errors?.required">
+                  <ion-text color="danger" class="messages-alert"
+                    >El campo es requerido.</ion-text
+                  >
+                </div>
+              </div>
+            </ion-col>
+
+            <!-- Botones -->
+            <ion-col class="ion-text-center" size="12">
+              <ion-button
+                color="primary"
+                (click)="sendData()"
+                id="btn-create-modal"
+                [disabled]="createForm.invalid"
+                size="block"
+                >Enviar</ion-button
+              >
+            </ion-col>
+          </ion-card>
         </ion-row>
       </ion-grid>
     </form>
   </ion-grid>
 </ion-content>
-
-<p>{{ createForm.invalid }} | json</p>
