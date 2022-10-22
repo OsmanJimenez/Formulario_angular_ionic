@@ -18,20 +18,22 @@
               ></ion-input>
             </ion-item>
 
-            <div *ngIf="errorControl.first_name.errors != null && (errorControl.first_name.touched || errorControl.first_name.dirty)">
+            <div
+              *ngIf="errorControl.first_name.errors != null && (errorControl.first_name.touched || errorControl.first_name.dirty)"
+            >
               <div *ngIf="errorControl.first_name.errors?.required">
                 <ion-text color="primary" class="messages-alert"
-                  >La fecha no puede ser un Sabado ni un Domingo.</ion-text
+                  >El campo es requerido.</ion-text
                 >
               </div>
               <div *ngIf="errorControl.first_name.errors?.minlength">
                 <ion-text color="primary" class="messages-alert"
-                  >La fecha no puede ser un Sabado ni un Domingo.</ion-text
+                  >Minimo 4 caracteres.</ion-text
                 >
               </div>
               <div *ngIf="errorControl.first_name.errors?.maxLength">
                 <ion-text color="primary" class="messages-alert"
-                  >La fecha no puede ser un Sabado ni un Domingo.</ion-text
+                  >Maximo 20 caracteres.</ion-text
                 >
               </div>
             </div>
@@ -50,20 +52,22 @@
               ></ion-input>
             </ion-item>
 
-            <div *ngIf="errorControl.last_name.errors != null && (errorControl.last_name.touched || errorControl.last_name.dirty)">
+            <div
+              *ngIf="errorControl.last_name.errors != null && (errorControl.last_name.touched || errorControl.last_name.dirty)"
+            >
               <div *ngIf="errorControl.last_name.errors?.required">
                 <ion-text color="primary" class="messages-alert"
-                  >La fecha no puede ser un Sabado ni un Domingo.</ion-text
+                  >El campo es requerido.</ion-text
                 >
               </div>
               <div *ngIf="errorControl.last_name.errors?.minlength">
                 <ion-text color="primary" class="messages-alert"
-                  >La fecha no puede ser un Sabado ni un Domingo.</ion-text
+                  >Minimo 4 caracteres.</ion-text
                 >
               </div>
               <div *ngIf="errorControl.last_name.errors?.maxLength">
                 <ion-text color="primary" class="messages-alert"
-                  >La fecha no puede ser un Sabado ni un Domingo.</ion-text
+                >Maximo 20 caracteres.</ion-text
                 >
               </div>
             </div>
@@ -83,20 +87,22 @@
               ></ion-input>
             </ion-item>
 
-            <div *ngIf="errorControl.identification.errors != null && (errorControl.identification.touched || errorControl.identification.dirty)">
+            <div
+              *ngIf="errorControl.identification.errors != null && (errorControl.identification.touched || errorControl.identification.dirty)"
+            >
               <div *ngIf="errorControl.identification.errors?.required">
                 <ion-text color="primary" class="messages-alert"
-                  >La fecha no puede ser un Sabado ni un Domingo.</ion-text
+                  >El campo es requerido.</ion-text
                 >
               </div>
               <div *ngIf="errorControl.identification.errors?.minlength">
                 <ion-text color="primary" class="messages-alert"
-                  >La fecha no puede ser un Sabado ni un Domingo.</ion-text
+                  >Minimo 4 caracteres.</ion-text
                 >
               </div>
               <div *ngIf="errorControl.identification.errors?.maxLength">
                 <ion-text color="primary" class="messages-alert"
-                  >La fecha no puede ser un Sabado ni un Domingo.</ion-text
+                >Maximo 20 caracteres.</ion-text
                 >
               </div>
             </div>
@@ -116,20 +122,27 @@
               ></ion-input>
             </ion-item>
 
-            <div *ngIf="errorControl.email.errors != null && (errorControl.email.touched || errorControl.email.dirty)">
+            <div
+              *ngIf="errorControl.email.errors != null && (errorControl.email.touched || errorControl.email.dirty)"
+            >
               <div *ngIf="errorControl.email.errors?.required">
                 <ion-text color="primary" class="messages-alert"
-                  >La fecha no puede ser un Sabado ni un Domingo.</ion-text
+                  >El campo es requerido.</ion-text
                 >
               </div>
               <div *ngIf="errorControl.email.errors?.minlength">
                 <ion-text color="primary" class="messages-alert"
-                  >La fecha no puede ser un Sabado ni un Domingo.</ion-text
+                  >Minimo 4 caracteres.</ion-text
                 >
               </div>
               <div *ngIf="errorControl.email.errors?.maxLength">
                 <ion-text color="primary" class="messages-alert"
-                  >La fecha no puede ser un Sabado ni un Domingo.</ion-text
+                >Maximo 20 caracteres.</ion-text
+                >
+              </div>
+              <div *ngIf="errorControl.email.errors?.email">
+                <ion-text color="primary" class="messages-alert"
+                >Ingrege un correo valido.</ion-text
                 >
               </div>
             </div>
@@ -164,20 +177,12 @@
               </ion-list>
             </ion-item>
 
-            <div *ngIf="errorControl.gender.errors != null && (errorControl.gender.touched || errorControl.gender.dirty)">
+            <div
+              *ngIf="errorControl.gender.errors != null && (errorControl.gender.touched || errorControl.gender.dirty)"
+            >
               <div *ngIf="errorControl.gender.errors?.required">
                 <ion-text color="primary" class="messages-alert"
-                  >La fecha no puede ser un Sabado ni un Domingo.</ion-text
-                >
-              </div>
-              <div *ngIf="errorControl.gender.errors?.minlength">
-                <ion-text color="primary" class="messages-alert"
-                  >La fecha no puede ser un Sabado ni un Domingo.</ion-text
-                >
-              </div>
-              <div *ngIf="errorControl.gender.errors?.maxLength">
-                <ion-text color="primary" class="messages-alert"
-                  >La fecha no puede ser un Sabado ni un Domingo.</ion-text
+                  >El campo es requerido.</ion-text
                 >
               </div>
             </div>
@@ -187,19 +192,21 @@
           <ion-col size="12">
             <ion-item>
               <ion-label position="floating" color="tertiary"
-                >Fecha de Nacimiento</ion-label
+                >Fecha de Envio</ion-label
               >
               <ion-datetime
                 displayFormat="D MMM YYYY"
                 min="2022"
                 max="2023"
                 value="2022-10-06T11:06Z"
-                formControlName="birth_date"
+                formControlName="send_date"
               ></ion-datetime>
             </ion-item>
           </ion-col>
-          <div *ngIf="errorControl.birth_date.errors != null && (errorControl.birth_date.touched || errorControl.birth_date.dirty)">
-            <div *ngIf="errorControl.birth_date.errors.invalidDate">
+          <div
+            *ngIf="errorControl.send_date.errors != null && (errorControl.send_date.touched || errorControl.send_date.dirty)"
+          >
+            <div *ngIf="errorControl.send_date.errors.invalidDate">
               <ion-text color="primary" class="messages-alert"
                 >La fecha no puede ser un Sabado ni un Domingo.</ion-text
               >

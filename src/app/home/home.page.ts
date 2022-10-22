@@ -17,46 +17,48 @@ export class HomePage {
   }
 
   validateForm() {
-    this.createForm = this.formBuilder.group({
-      first_name: [
-        "",
-        [
-          Validators.required,
-          Validators.minLength(4),
-          Validators.maxLength(20),
+    this.createForm = this.formBuilder.group(
+      {
+        first_name: [
+          "",
+          [
+            Validators.required,
+            Validators.minLength(4),
+            Validators.maxLength(20),
+          ],
         ],
-      ],
-      last_name: [
-        "",
-        [
-          Validators.required,
-          Validators.minLength(4),
-          Validators.maxLength(20),
+        last_name: [
+          "",
+          [
+            Validators.required,
+            Validators.minLength(4),
+            Validators.maxLength(20),
+          ],
         ],
-      ],
-      email: [
-        "",
-        [
-          Validators.required,
-          Validators.minLength(4),
-          Validators.maxLength(20),
+        email: [
+          "",
+          [
+            Validators.required,
+            Validators.minLength(4),
+            Validators.maxLength(20),
+            Validators.email,
+          ],
         ],
-      ],
-      birth_date: ["", Validators.compose([Validators.required])],
-
-      identification: [
-        "",
-        [
-          Validators.required,
-          Validators.minLength(4),
-          Validators.maxLength(20),
+        send_date: ["", Validators.compose([Validators.required])],
+        identification: [
+          "",
+          [
+            Validators.required,
+            Validators.minLength(4),
+            Validators.maxLength(20),
+          ],
         ],
-      ],
-      gender: ["", Validators.compose([Validators.required])],
-    },
-    {
-      validator: validateDate('birth_date'),
-    });
+        gender: ["", Validators.compose([Validators.required])],
+      },
+      {
+        validator: validateDate("send_date"),
+      }
+    );
   }
 
   get errorControl() {
