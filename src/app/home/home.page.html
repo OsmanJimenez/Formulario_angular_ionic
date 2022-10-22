@@ -1,20 +1,114 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content>
+  <ion-grid>
+    <form [formGroup]="createForm">
+      <ion-grid class="form-data">
+        <ion-row>
+          <!-- Input Nombre -->
+          <ion-col size="12">
+            <ion-item>
+              <ion-label position="floating" color="tertiary"
+                >Nombres *</ion-label
+              >
+              <ion-input
+                mode="md"
+                type="text"
+                [attr.maxlength]="150"
+                formControlName="first_name"
+                id="first_name"
+              ></ion-input>
+            </ion-item>
+          </ion-col>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+          <!-- Input Apellido -->
+          <ion-col size="12">
+            <ion-item>
+              <ion-label position="floating" color="tertiary"
+                >Apellidos *</ion-label
+              >
+              <ion-input
+                mode="md"
+                formControlName="last_name"
+                id="last_name"
+              ></ion-input>
+            </ion-item>
+          </ion-col>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+          <!-- Input Identificación -->
+          <ion-col size="12">
+            <ion-item>
+              <ion-label position="floating" color="tertiary">Cédula</ion-label>
+              <ion-input
+                mode="md"
+                type="text"
+                formControlName="identification"
+                id="identification"
+              ></ion-input>
+            </ion-item>
+          </ion-col>
+
+          <!-- Input Genero de Nacimiento-->
+          <ion-col size="12">
+            <ion-item lines="none">
+              <ion-list lines="none" class="gender-list">
+                <ion-label color="tertiary">Género de Nacimiento *</ion-label>
+                <ion-radio-group
+                  color="tertiary"
+                  formControlName="gender"
+                  id="gender"
+                  (ionChange)="enableStudy()"
+                >
+                  <ion-row>
+                    <ion-col size="6">
+                      <ion-item>
+                        <ion-label>Femenino</ion-label>
+                        <ion-radio mode="md" slot="start" value="F"></ion-radio>
+                      </ion-item>
+                    </ion-col>
+
+                    <ion-col size="6">
+                      <ion-item class="ml-16">
+                        <ion-label>Masculino</ion-label>
+                        <ion-radio mode="md" slot="start" value="M"></ion-radio>
+                      </ion-item>
+                    </ion-col>
+                  </ion-row>
+                </ion-radio-group>
+              </ion-list>
+            </ion-item>
+          </ion-col>
+
+          <!-- Input Fecha de Nacimiento -->
+          <ion-col size="12">
+            <ion-item>
+              <ion-label position="floating" color="tertiary"
+                >Fecha de Nacimiento</ion-label
+              >
+              <ion-datetime
+                displayFormat="D MMM YYYY"
+                min="1997"
+                max="2010"
+                value="2005-06-17T11:06Z"
+                formControlName="birth_date"
+              ></ion-datetime>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+
+      <!-- Botones -->
+      <ion-grid>
+        <ion-row>
+          <ion-col class="ion-text-center" size="12">
+            <button
+              (click)="sendData()"
+              id="btn-create-modal"
+              class="btn-primary-2"
+            >
+              Registrar
+            </button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </form>
+  </ion-grid>
 </ion-content>
