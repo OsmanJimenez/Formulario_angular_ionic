@@ -1,7 +1,5 @@
 {
-  "name": "blanck",
-  "integrations": {
-    "capacitor": {}
-  },
+  "name": "blank",
+  "integrations": {},
   "type": "angular"
 }
