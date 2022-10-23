@@ -6,6 +6,11 @@ export function validateDate(controlName: string) {
     const control = formGroup.controls[controlName];
     if (control.value != "") {
       let weekDay = format(new Date(control.value), "EEEE");
+      let dateFormat = format(new Date(control.value), "dd-MM-yyyy");
+      console.log(
+        "nueva fecha:",
+        format(new Date(control.value), "dd-MM-yyyy")
+      );
 
       console.log(weekDay);
       if (weekDay == "Saturday") {
